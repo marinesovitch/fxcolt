@@ -1,0 +1,18 @@
+LIBRARY mtfxcolt.dll
+
+EXPORTS
+	RegisterSymbol
+	UnregisterSymbol
+	DumpTick
+
+	GetMaxCmdArgCount
+	GetMaxCmdStringLen
+	GetMaxCmdTicketCount
+
+	GetCommand
+	OnCommandCompleted
+	DumpSymbol
+	DumpOrder
+
+	LogWrite
+	LogWriteln
