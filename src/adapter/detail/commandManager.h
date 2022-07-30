@@ -1,3 +1,4 @@
+// author: Darek Slusarczyk alias marines marinesovitch 2012-2013, 2022
 #ifndef INC_ADAPTER_COMMANDMANAGER_H
 #define INC_ADAPTER_COMMANDMANAGER_H
 

@@ -1,4 +1,5 @@
-﻿#ifndef INC_COMMON_ORDER_H
+// author: Darek Slusarczyk alias marines marinesovitch 2012-2013, 2022
+#ifndef INC_COMMON_ORDER_H
 #define INC_COMMON_ORDER_H
 
 #include "types.h"

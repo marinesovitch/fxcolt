@@ -1,3 +1,4 @@
+// author: Darek Slusarczyk alias marines marinesovitch 2012-2013, 2022
 #ifndef INC_COMMON_NAMEDPIPE_H
 #define INC_COMMON_NAMEDPIPE_H
 

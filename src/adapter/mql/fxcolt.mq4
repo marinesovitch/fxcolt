@@ -1,16 +1,14 @@
 //+------------------------------------------------------------------+
 //|                                                       fxcolt.mq4 |
-//|                        Copyright 2014, MetaQuotes Software Corp. |
-//|                                              http://www.mql5.com |
+//|                    Copyright 2014-2015, 2022, Dariusz Slusarczyk |
+//|                                 https://github.com/marinesovitch |
 //+------------------------------------------------------------------+
-#property copyright "Copyright 2014, MetaQuotes Software Corp."
-#property link      "http://www.mql5.com"
+#property copyright "Copyright 2014-2015, 2022, Dariusz Slusarczyk"
+#property link      "https://github.com/marinesovitch"
 #property version   "1.00"
 #property strict
 
-//+------------------------------------------------------------------+
-//| Expert initialization function                                   |
-//+------------------------------------------------------------------+
+// ---------------------------------------------------------------------------
 
 #import "mtfxcolt.dll"
 	int RegisterSymbol(const string broker, const long accountLogin, const string symbol);
@@ -52,6 +50,8 @@ int CmdTicketCount;
 string CmdResult;
 
 const int DefaultSlippage = 5;
+
+// ---------------------------------------------------------------------------
 
 int OnInit()
 {
@@ -100,6 +100,8 @@ void OnDeinit(const int reason)
 	UnregisterSymbol(Symbol());
 	LogWriteln(StringConcatenate("----------------- DEINIT ", AccountInfoString(ACCOUNT_COMPANY), " ", AccountInfoInteger(ACCOUNT_LOGIN), " " , Symbol(), " -----------------"));
 }
+
+// ---------------------------------------------------------------------------
 
 void OnTick()
 {

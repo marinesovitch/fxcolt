@@ -1,3 +1,4 @@
+// author: Darek Slusarczyk alias marines marinesovitch 2012-2013, 2022
 #ifndef INC_INCLUDES_PHWIN_H
 #define INC_INCLUDES_PHWIN_H
 

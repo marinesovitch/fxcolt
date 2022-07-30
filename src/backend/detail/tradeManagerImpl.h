@@ -1,4 +1,5 @@
-﻿#ifndef INC_BACKEND_TRADERMANAGERIMPL_H
+// author: Darek Slusarczyk alias marines marinesovitch 2012-2013, 2022
+#ifndef INC_BACKEND_TRADERMANAGERIMPL_H
 #define INC_BACKEND_TRADERMANAGERIMPL_H
 
 namespace fx
