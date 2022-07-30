@@ -36,7 +36,7 @@ I worked on this project in my free time in 2014-2015. Recently, before pushing 
 
 The only dependency is [the Boost library](https://www.boost.org/). The project was tested against [version 1.79.0](https://www.boost.org/users/history/version_1_79_0.html). Only headers are needed.
 
-It is expected to be located under subdirectory [3rdParty/boost](3rdParty/boost).
+It is expected to be located under subdirectory `3rdParty/boost`.
 
 The dependency was added as [a git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). To initialize it, call the script [init_boost.bat](init_boost.bat).
 
