@@ -11,32 +11,32 @@ namespace cpp
 
 enum ESeverity
 {
-    Normal,
-    Warning,
-    Error,
-    Log,
-    MsgLog
+	Normal,
+	Warning,
+	Error,
+	Log,
+	MsgLog
 }; //ESeverity
 
 struct IStreamOutput
 {
-    virtual ~IStreamOutput();
+	virtual ~IStreamOutput();
 
-    virtual void dump(
-        const ESeverity severity,
-        const std::string& buffer) = 0;
+	virtual void dump(
+		const ESeverity severity,
+		const std::string& buffer) = 0;
 
-    static IStreamOutput* create_file_output(
-        const std::string& filepath,
-        const bool print_severity = true,
-        const bool print_time = true,
-        const bool print_pid = true );
+	static IStreamOutput* create_file_output(
+		const std::string& filepath,
+		const bool print_severity = true,
+		const bool print_time = true,
+		const bool print_pid = true );
 
-    static IStreamOutput* create_debug_output(
-        const bool print_severity = true);
+	static IStreamOutput* create_debug_output(
+		const bool print_severity = true);
 
-    static IStreamOutput* create_raw_file_output(
-        const std::string& filepath);
+	static IStreamOutput* create_raw_file_output(
+		const std::string& filepath);
 
 }; //IStreamOutput
 
@@ -45,28 +45,28 @@ struct IStreamOutput
 //========================================================================
 
 /*
-    it is comfortable std::ostream like interface for console
-    you can dump any information to console using this stream just like
-    any other std::ostream derived object
+	it is comfortable std::ostream like interface for console
+	you can dump any information to console using this stream just like
+	any other std::ostream derived object
 */
 //lint -esym(1714,messagestream::*)
 class messagestream:public std::ostream
 {
-    public:
-        typedef std::ostream inherited;
+	public:
+		typedef std::ostream inherited;
 
-    public:
-        explicit messagestream();
-        virtual ~messagestream();
+	public:
+		explicit messagestream();
+		virtual ~messagestream();
 
-        void init ( IStreamOutput* pOutput, ESeverity severity );
+		void init ( IStreamOutput* pOutput, ESeverity severity );
 
-        void enable ( bool bEnable );
-        bool isEnabled() const;
+		void enable ( bool bEnable );
+		bool isEnabled() const;
 
-    public:
-        class Impl;
-        std::unique_ptr<Impl>impl;
+	public:
+		class Impl;
+		std::unique_ptr<Impl>impl;
 
 }; //messagestream
 
@@ -76,23 +76,23 @@ class messagestream:public std::ostream
 
 class nullstream
 {
-    template< typename T >
-    inline nullstream& operator << ( T )
-    {
-        return *this;
-    }
+	template< typename T >
+	inline nullstream& operator << ( T )
+	{
+		return *this;
+	}
 
-    template< typename T >
-    inline nullstream& operator << ( T (* /*fn*/)( T ) )
-    {
-        return *this;
-    }
+	template< typename T >
+	inline nullstream& operator << ( T (* /*fn*/)( T ) )
+	{
+		return *this;
+	}
 };
 
 inline nullstream& operator << ( 
-    nullstream& ns, std::ostream& (* /*fn*/)(std::ostream& ) )
+	nullstream& ns, std::ostream& (* /*fn*/)(std::ostream& ) )
 {
-    return ns;
+	return ns;
 }
 
 //========================================================================
@@ -109,9 +109,9 @@ extern nullstream cnul;
 extern messagestream cusr;
 
 #ifndef NDEBUG
-    #define cdiag cdbg
+	#define cdiag cdbg
 #else
-    #define cdiag cnul
+	#define cdiag cnul
 #endif
 
 void init_stream ( messagestream& stream, IStreamOutput* output, ESeverity severity );

@@ -7,7 +7,7 @@ namespace fx
 
 struct ITradeManager;
 struct ICommunicator;
- 
+
 ITradeManager* createTradeManager(ICommunicator* communicator);
 
 } // namespace fx

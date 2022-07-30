@@ -11,16 +11,16 @@ namespace su
 
 std::string w2str(const wchar_t* wstr)
 {
-    using convert_type = std::codecvt_utf8<wchar_t>;
-    std::wstring_convert<convert_type, wchar_t> converter;
-    return converter.to_bytes(wstr);
+	using convert_type = std::codecvt_utf8<wchar_t>;
+	std::wstring_convert<convert_type, wchar_t> converter;
+	return converter.to_bytes(wstr);
 }
 
 std::string w2str(const std::wstring& wstr)
 {
-    using convert_type = std::codecvt_utf8<wchar_t>;
-    std::wstring_convert<convert_type, wchar_t> converter;
-    return converter.to_bytes(wstr.data(), wstr.data() + wstr.length());
+	using convert_type = std::codecvt_utf8<wchar_t>;
+	std::wstring_convert<convert_type, wchar_t> converter;
+	return converter.to_bytes(wstr.data(), wstr.data() + wstr.length());
 }
 
 std::wstring str2w(const char* str)
@@ -74,16 +74,16 @@ bool split(const std::string& str, const char separator, cpp::strings_t* tokens)
 
 bool split(const std::string& str, const std::string& separator, cpp::strings_t* tokens)
 {
-    auto begin = 0;
-    auto end = str.find( separator );
-    while (end != std::string::npos)
-    {
+	auto begin = 0;
+	auto end = str.find( separator );
+	while (end != std::string::npos)
+	{
 		const std::string token( str, begin, end - begin);
 		tokens->push_back( token );
 
-        begin = end + separator.length();
-        end = str.find( separator, begin );
-    }
+		begin = end + separator.length();
+		end = str.find( separator, begin );
+	}
 
 	const bool result = !tokens->empty();
 	return result;

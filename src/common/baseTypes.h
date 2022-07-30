@@ -20,9 +20,9 @@ typedef std::vector<ticket_t> tickets_t;
 
 struct MqlStr
 {
-    int m_length;
-    wchar_t* m_data;
-    int reserved;
+	int m_length;
+	wchar_t* m_data;
+	int reserved;
 };
 
 } // namespace fx

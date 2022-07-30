@@ -18,29 +18,29 @@ bool pathExists(const std::string& path)
 bool enumNamedPipes(const std::string& filter, cpp::strings_t* pipes)
 {
 	const std::string NamedPipePrefix = "\\\\.\\pipe\\";
-    const std::string TargetMask = NamedPipePrefix + "*";
+	const std::string TargetMask = NamedPipePrefix + "*";
 
-    WIN32_FIND_DATA findFileData;
+	WIN32_FIND_DATA findFileData;
 
-    memset(&findFileData, 0, sizeof(findFileData));
-    HANDLE hFind = ::FindFirstFile(TargetMask.c_str(), &findFileData);
-    if (hFind != INVALID_HANDLE_VALUE) 
-    {
-        do
-        {
+	memset(&findFileData, 0, sizeof(findFileData));
+	HANDLE hFind = ::FindFirstFile(TargetMask.c_str(), &findFileData);
+	if (hFind != INVALID_HANDLE_VALUE) 
+	{
+		do
+		{
 			if (strstr(findFileData.cFileName, filter.c_str()))
 			{
 				const std::string& pipe = NamedPipePrefix + findFileData.cFileName;
 				pipes->push_back(pipe);
 			}
-        }
-        while (::FindNextFile(hFind, &findFileData));
+		}
+		while (::FindNextFile(hFind, &findFileData));
 
-        ::FindClose(hFind);
-    }
+		::FindClose(hFind);
+	}
 
 	const bool result = !pipes->empty();
-    return result;
+	return result;
 }
 
 } // namespace utils

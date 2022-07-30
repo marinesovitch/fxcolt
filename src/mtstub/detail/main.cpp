@@ -14,9 +14,9 @@ void generateTicks()
 	constexpr double MinExchangeRate = 4.23;
 	constexpr double MaxExchangeRate = 4.25;
 
-    std::random_device rd;
-    std::default_random_engine eng(rd());
-    std::uniform_real_distribution<double> distr(MinExchangeRate, MaxExchangeRate);
+	std::random_device rd;
+	std::default_random_engine eng(rd());
+	std::uniform_real_distribution<double> distr(MinExchangeRate, MaxExchangeRate);
 
 	while (true)
 	{
