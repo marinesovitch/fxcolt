@@ -114,9 +114,24 @@ copy %BIN_DIR%\mtfxcolt.dll %MT_DATA_FOLDER%\MQL4\Libraries\mtfxcolt.dll
 * if fxcolt-ea was properly installed in the previous point, then `fxcolt` will be visible in the list of Navigator items under section `Expert Advisors`
 * open any chart (e.g. for symbol EURUSD)
 * add `fxcolt` to the chosen chart via the context menu option `Attach to a chart` or with drag&drop
-* [Click here to see how the installed fxcolt-ea looks like in the MetaTrader GUI](https://raw.githubusercontent.com/marinesovitch/media/trunk/fxcolt/fxcolt-ea.png)
+![Alt text](https://raw.githubusercontent.com/marinesovitch/media/trunk/fxcolt/fxcolt-ea.png "a screenshot how the installed fxcolt-ea looks like in the MetaTrader GUI")
 
 ## How to use
+
+### Start session
+
+* run kommander-cli (kommander.exe)
+* run MetaTrader with installed fxcolt-ea
+
+### A sample session log
+
+* [Click here to see a sample kommander-cli session](https://github.com/marinesovitch/media/blob/trunk/fxcolt/kommander-cli-session.log).
+* the MetaTrader screenshot with the list of orders opened during that session:
+![Alt text](https://raw.githubusercontent.com/marinesovitch/media/trunk/fxcolt/orders.png "the MetaTrader screenshot with the list of orders opened during that session")
+* the MetaTrader screenshot with the list of orders closed before ending the session:
+![Alt text](https://raw.githubusercontent.com/marinesovitch/media/trunk/fxcolt/orders.png "the MetaTrader screenshot with the list of orders closed before ending the session")
+
+---------------
 
 ### List of commands
 
@@ -590,16 +605,6 @@ $ KTrader::onCmdResult cmd sent successfully
 *exit*
 
 It closes the session and ends the kommander-cli process.
-
----------------
-
-### A sample session log
-
-[Click here to see a sample kommander-cli session](https://github.com/marinesovitch/media/blob/trunk/fxcolt/kommander-cli-session.log).
-
-[Click here to see the MetaTrader screenshot with the list of orders opened during that session](https://raw.githubusercontent.com/marinesovitch/media/trunk/fxcolt/orders.png).
-
-[Click here to see the MetaTrader screenshot with the list of orders closed before ending the session](https://raw.githubusercontent.com/marinesovitch/media/trunk/fxcolt/closed_orders.png).
 
 ---------------
 
